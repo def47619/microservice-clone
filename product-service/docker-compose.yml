@@ -4,10 +4,12 @@ services:
     image: mongo:7.0.5
     container_name: mongodb
     ports:
-      - "27017:27017"
+      # 로컬에 mongodb 프로그램 깔아서 실행하고 있어서 부득이하게 다른 포트로 실행
+      - "27018:27017"
     environment:
-      MONGO_INITDB_ROOT_USRNAME: root
+      MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: password
       MONGO_INITDB_DATABASE: product-service
+      # root 계정을 사용하려면, 접근 시 authSource=admin 설정해야 한다.
     volumes:
       - ./data:/data/db

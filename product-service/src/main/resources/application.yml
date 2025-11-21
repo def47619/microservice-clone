@@ -7,4 +7,5 @@ spring:
 
   data:
     mongodb:
-      uri: "mongodb://localhost:27017/product-service"
+      # root 게정을 사용하려면, 접근 시 authSource=admin 설정해야 한다.
+      uri: "mongodb://root:password@localhost:27018/product-service?authSource=admin"
