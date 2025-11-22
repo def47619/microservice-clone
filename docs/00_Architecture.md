@@ -6,3 +6,7 @@
 - Azul JDK17
 - SpringBoot 3.X
 - Docker Desktop
+
+## Refs
+- Github: def47619 - microservice-ex
+- Refs: [Youtube Vids: Programming Techie](https://www.youtube.com/watch?v=yn_stY3HCr8&t=23978s)
