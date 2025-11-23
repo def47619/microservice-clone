@@ -62,6 +62,8 @@ spring:
 ```
 
 ## 코드: Github에서 확인
+아래 URL에 커밋  로그로 모든 기능 구현사항 확인 가능
+- https://github.com/def47619/microservice-clone/commit/1fd6ff7a53bec3b2c6fcbab74cef768ef2002c56
 
 ## 실행 결과 : Postman 확인 
 
