@@ -10,3 +10,4 @@
 ## Refs
 - Github: def47619 - microservice-ex
 - Refs: [Youtube Vids: Programming Techie](https://www.youtube.com/watch?v=yn_stY3HCr8&t=23978s)
+- https://programmingtechie.com/articles

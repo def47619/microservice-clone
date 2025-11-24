@@ -16,16 +16,16 @@ public class OrderService {
     private final OrderRepository orderRepository;
 
     public void placeOrder(OrderRequest orderRequest) {
-        // Map OrderRequest -> Order
-        Order order = new Order();
+        var order = mapToOrder(orderRequest);
+        orderRepository.save(order);
+    }
 
+    private static Order mapToOrder(OrderRequest orderRequest) {
+        Order order = new Order();
         order.setOrderNumber(UUID.randomUUID().toString());
         order.setPrice(orderRequest.price());
-        order.setSkuCode(orderRequest.skuCode());
         order.setQuantity(orderRequest.quantity());
-
-        // save order through OrderRepository
-        orderRepository.save(order);
-
+        order.setSkuCode(orderRequest.skuCode());
+        return order;
     }
 }
