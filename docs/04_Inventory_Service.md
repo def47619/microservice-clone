@@ -94,3 +94,11 @@ values
 - v2 sql문의 데이터까지 잘 들어간 것을 볼 수 있다. 
 
 ---
+### 코드 작성 
+
+inventory 관련된 MVC (Entity - Repo - Service - Controller)까지 작성
+
+### 테스트 
+- 해당 sku_code와 수량이 있는지 확인 결과 : 
+![nn](images/19.png)
+- true로 있다고 나온다. 
