@@ -96,7 +96,8 @@ values
 ---
 ### 코드 작성 
 
-inventory 관련된 MVC (Entity - Repo - Service - Controller)까지 작성
+inventory 관련된 MVC (Entity - Repo - Service - Controller)까지 작성  
+[Github Commit 페이지](https://github.com/def47619/microservice-clone/commit/69c976553a86c88d1b35a99950bb1514701e3d32)
 
 ### 테스트 
 - 해당 sku_code와 수량이 있는지 확인 결과 : 
