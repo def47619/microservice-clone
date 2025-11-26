@@ -1,5 +1,6 @@
 package com.leew.microservice.order_service.service;
 
+import com.leew.microservice.order_service.client.InventoryClient;
 import com.leew.microservice.order_service.dto.OrderRequest;
 import com.leew.microservice.order_service.model.Order;
 import com.leew.microservice.order_service.repository.OrderRepository;
@@ -14,10 +15,17 @@ import java.util.UUID;
 public class OrderService {
 
     private final OrderRepository orderRepository;
+    private final InventoryClient inventoryClient;
 
     public void placeOrder(OrderRequest orderRequest) {
-        var order = mapToOrder(orderRequest);
-        orderRepository.save(order);
+        var isProductInStock = inventoryClient.isInStock(orderRequest.skuCode(), orderRequest.quantity());
+
+        if (isProductInStock) {
+            var order = mapToOrder(orderRequest);
+            orderRepository.save(order);
+            return;
+        }
+        throw new RuntimeException("Product with Skucode: " + orderRequest.skuCode() + " is not in stock");
     }
 
     private static Order mapToOrder(OrderRequest orderRequest) {
