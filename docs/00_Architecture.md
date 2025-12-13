@@ -8,6 +8,7 @@
 - Docker Desktop
 
 ## Refs
-- Github: def47619 - microservice-ex
+- Github: def47619 / microservice-ex
 - Refs: [Youtube Vids: Programming Techie](https://www.youtube.com/watch?v=yn_stY3HCr8&t=23978s)
 - https://programmingtechie.com/articles
+- [Github Source Code](https://github.com/SaiUpadhyayula/spring-boot-3-microservices-course)

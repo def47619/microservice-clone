@@ -37,6 +37,15 @@ dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 	implementation 'org.springframework.cloud:spring-cloud-starter-loadbalancer'
 
+	// OpenFeign 설정한 코드 테스트 위한 라이브러리
+	testImplementation "org.springframework.cloud:spring-cloud-starter-contract-stub-runner"
+	// OpenFeign을 stub-runner와 함께 사용하는 경우 아래도 자주 씀
+	testImplementation "org.springframework.cloud:spring-cloud-starter-contract-verifier"
+	testImplementation "org.springframework.cloud:spring-cloud-contract-wiremock"
+
+	// https://sy-develop-note.tistory.com/97
+	// testImplementation 'com.github.tomakehurst:wiremock:2.27.2'
+
 	/* ------------------------------
      * Spring Cloud Netflix (필요 시)
      * ------------------------------ */
@@ -58,7 +67,8 @@ dependencies {
 	testImplementation 'io.rest-assured:rest-assured:5.1.1'
 }
 
-
+// BOM 설정 및 사용 -> spring-cloud-dependencies 버전 명시할 필요 없음
+// stub-runner는 BOM 안에 포함되어 있어서 버전을 직접 쓸 필요 없음
 dependencyManagement {
 	imports {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"

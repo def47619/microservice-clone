@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  *  나중에 eureka 서버 사용하게 되면, 정적 url 없이 사용하게 될 것
  *  url 키워드는 삭제할 예정
  */
-@FeignClient(value = "inventory-service", url = "http://localhost:8082")
+@FeignClient(value = "inventory-service", url = "${inventory.url}")
 public interface InventoryClient {
     @RequestMapping(method = RequestMethod.GET, value = "/api/inventory/exists")
     boolean isInStock(@RequestParam(value = "skuCode") String skuCode, @RequestParam(value = "quantity") Integer quantity);
